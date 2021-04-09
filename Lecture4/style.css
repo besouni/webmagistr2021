@@ -1,0 +1,18 @@
+div{
+   width: 400px;
+   height: 300px;
+   margin: 20px auto;
+   padding: 20px;
+   border:solid 5px green;
+   background-color: aquamarine;
+}
+
+p{
+   background-color: antiquewhite;
+   height: 50px;
+   border: solid 3px red;
+   padding: 10px;
+   font-size: 2em;
+   vertical-align:middle;
+   text-align: center;
+}

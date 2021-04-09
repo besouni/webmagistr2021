@@ -1,0 +1,21 @@
+$color1:#3ca9f2;
+$color2:silver;
+$fontSize1:30px;
+$width1:600px;
+$height1:200px;
+@import 'header';
+
+@import '_menu';
+
+body{
+   background-color: silver;
+}
+
+div{
+   border: solid;
+   height: $height1;
+   width: $width1;
+   margin:auto;
+   margin-bottom: 10px;
+}
+

@@ -1,0 +1,38 @@
+form{
+    width: 50%;
+    border:solid 5px grey;
+    padding: 20px;
+    margin: auto;
+    background-color: beige;
+}
+
+.select{
+    width: 50%;
+    border:solid 5px grey;
+    padding: 20px;
+    margin: auto;
+    background-color: beige;
+    margin-top: 20px;
+}
+
+.menu{
+    width: 50%;
+    border:solid 5px grey;
+    padding: 20px;
+    margin: auto;
+    background-color: beige;
+    margin-top: 20px;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.menu div{
+    flex: 1;
+}
+
+.user{
+    background-color: white;
+    border:solid 1px black;
+    padding: 10px;
+    margin-bottom: 10px;
+}

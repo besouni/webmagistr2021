@@ -3,19 +3,12 @@
    $db = "webdb";
    $user = "root";
    $password = "";
+
    try{
        $conn = new PDO("mysql:host=$host; dbname=$db", $user,$password);
        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-       /*
-       $sql = "CREATE TABLE users(
-                            id INT(5) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-                            firstname VARCHAR (50) NULL,
-                            lastname VARCHAR (50) NULL,
-                            age INT(3) NULL )";
-       $conn->exec($sql);
-       */
    }catch (PDOException $e){
-       echo $e->getMessage();
+       die ($e->getMessage());
    }
 
    if(isset($_POST['insert'])){
@@ -47,27 +40,20 @@
     }
 
     function select(PDO $conn){
-       $sql_select = "SELECT * FROM users ORDER BY id desc";
+       $sql_select = "SELECT * FROM users ORDER BY id DESC";
        $stmt = $conn->prepare($sql_select);
        $stmt->execute();
        $stmt->setFetchMode(PDO::FETCH_ASSOC);
        $result = $stmt->fetchAll();
-       /*
-       echo "<pre>";
-       print_r($result);
-       echo "</pre>";
-       */
        foreach ($result as $item){
            echo "<div class='user'>";
-           echo "<div>".$item['firstname']."</div>";
-           echo "<div>".$item['lastname']."</div>";
-           echo "<div>".$item['age']."</div>";
-           echo "<a href='?action=edit&id=".$item['id']."'>EDIT</a>";
-           echo "<br>";
-           echo "<a href='?action=delete&id=".$item['id']."'>DELETE</a>";
+               echo "<div>".$item['firstname']."</div>";
+               echo "<div>".$item['lastname']."</div>";
+               echo "<div>".$item['age']."</div>";
+               echo "<a href='?action=edit&id=".$item['id']."'>EDIT</a>";
+               echo "<br>";
+               echo "<a href='?action=delete&id=".$item['id']."'>DELETE</a>";
            echo "</div>";
        }
    }
-
-//   select($conn);
 ?>
